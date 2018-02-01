@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Search from './Search'
+import { StockData } from './PricingData.js'
 
 class App extends Component {
   constructor(props) {
@@ -12,12 +14,8 @@ class App extends Component {
   };
   
   handleSearch(e) {
-    this.setState({searchString: e.target.value});
-    fetch('./PricingData.json')
-      .then(results => JSON.parse(results))
-      .then(dataList => {this.setState({resultsList: dataList.filter.exec(`/${e.target.value}/`)})
-      })
-    console.log(this.state.resultsList);
+    // this.setState({resultsList: StockData.filter})
+    console.log(StockData[0])
   }
 
   render() {
@@ -25,7 +23,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">
-            <input name="search" type="search" autoFocus="true" onChange={this.handleSearch} />
+            <Search onChange={this.handleSearch} />
           </h1>
         </header>
         <p className="App-intro">

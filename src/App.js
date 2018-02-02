@@ -14,8 +14,10 @@ class App extends Component {
   };
   
   handleSearch(e) {
-    // this.setState({resultsList: StockData.filter})
-    console.log(StockData[0])
+    let searchRE = new RegExp(e.target.value)
+    // console.log(searchRE)
+    this.setState({resultsList: StockData.filter( search => search.product.match(searchRE) ) })
+    // console.log(this.state.resultsList)
   }
 
   render() {

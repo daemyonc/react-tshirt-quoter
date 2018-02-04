@@ -7,8 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      searchString: '',
-      resultsList: []
+      resultsList: ['']
     };
     this.handleSearch = this.handleSearch.bind(this);
   };
@@ -21,6 +20,8 @@ class App extends Component {
   }
 
   render() {
+    // const { resultsList } = this.state
+    // console.log(this.state.resultsList)
     return (
       <div className="App">
         <header className="App-header">
@@ -29,7 +30,12 @@ class App extends Component {
           </h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <select id="selectResults" className="search" >
+            {this.state.resultsList.map((element, idx) => 
+              // console.log(element,idx)
+              <option key={idx+element.product} value={element.cost}>{element.product}</option>
+            )}
+          </select>
         </p>
       </div>
     );

@@ -2,37 +2,54 @@ import React, { Component } from 'react';
 import './App.css';
 import Search from './Search'
 import { StockData } from './PricingData.js'
+import { decoPricing } from './decoPricing.js'
+
+// console.log(decoPricing["EMB"]["288"])
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      resultsList: [''],
-      selectedCost: 0,
-      selectedQty: 12
+      resultsList: [{"product":"5000","cost":"1.55"}],
+      value: 'EMB',
+      selectedCost: 1.87,
+      selectedQty: '12'
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleDecoMethod = this.handleDecoMethod.bind(this);
+    this.handleQty = this.handleQty.bind(this);
     
   };
   
   handleSearch(e) {
     let searchRE = new RegExp(e.target.value)
-    // console.log(searchRE)
     this.setState({resultsList: StockData.filter( search => search.product.match(searchRE) ) })
-    // console.log(this.state.resultsList)
   }
   
   handleSelect(e) {
     this.setState({selectedCost: parseFloat(e.target.value).toFixed(2)})
-    // console.log(this.state.selectedCost)
+  }
+
+  handleDecoMethod(e) {
+    this.setState({value: e.target.value})
+    console.log("Deco method: " + e.target.value)
+  }
+
+  handleQty(e) {
+    this.setState({selectedQty: e.target.value});
+    console.log("Qty: " + this.state.selectedQty)
   }
 
   render() {
-    const { selectedCost } = this.state
-    const blankCost = selectedCost / .8
-    const screenCost = 
-    // console.log(this.state.resultsList)
+    let { selectedCost,selectedQty,value } = this.state
+    const blankCost = parseFloat(selectedCost / .8).toFixed(2)
+    const decoCost = parseFloat(blankCost + (decoPricing[value][selectedQty]).toFixed(2))
+    console.log(decoCost, decoPricing[value][selectedQty] )
+    // console.log("Blank: " + blankCost)
+    // console.log("Deco method: " + value)
+    // console.log("Qty: " + selectedQty)
+
     return (
       <div className="App">
         <header className="App-header">
@@ -41,33 +58,33 @@ class App extends Component {
           </h1>
         </header>
         <p className="itemSelect">
-          <select id="selectResults" onChange={this.handleSelect} className="search" >
+          <select id="selectResults" onClick={this.handleSelect} onChange={this.handleSelect} className="search" >
             {this.state.resultsList.map((element, idx) => 
-              // console.log(element,idx)
               <option key={idx+element.product} value={element.cost}>{element.product}</option>
             )}
           </select>
-          <select id="selectDecoMethod" onChange={this.handleSelect} className="search" >
-            <option key={1} value={"SP"}>Screen Print</option>
-            <option key={2} value={"EMB"}>Embroidery</option>
+
+          <select className="decoMethod" value={value} onClick={this.handleDecoMethod} onChange={this.handleDecoMethod} >
+            <option value="SP">Screen Print</option>
+            <option value="EMB">Embroidery</option>
           </select>
-          <select id="selectQty" onChange={this.handleSelect} className="search" >
-            {selectDecoMethod === "EMB" &&
-            <option key={1} value={1}>1</option>}
-            <option key={2} value={12}>12</option>
-            <option key={3} value={24}>24</option>
-            <option key={4} value={48}>48</option>
-            <option key={5} value={72}>72</option>
-            <option key={6} value={144}>144</option>
-            <option key={7} value={288}>288</option>
-            <option key={8} value={500}>500</option>
-            <option key={9} value={1000}>1,000</option>
+
+          <select className="selectQty" onClick={this.handleQty} onChange={this.handleQty} >
+            <option value="1">1</option>
+            <option value="12">12</option>
+            <option value="24">24</option>
+            <option value="48">48</option>
+            <option value="72">72</option>
+            <option value="144">144</option>
+            <option value="288">288</option>
+            <option value="500">500</option>
+            <option value="1000">1,000</option>
           </select>
         </p>
         <div className="quoteResults">
-            <span id="itemCost">{selectedCost}</span>
-            <span id="blankCost">{selectedCost/.8}</span>
-            <span id="blankCost">{selectedCost/.8}</span>
+            <span className="priceResults">Our Cost: {selectedCost}</span>
+            <span className="priceResults">Blank Price: {blankCost}</span>
+            <span className="priceResults">Screen Price: {decoCost}</span>           
         </div>
       </div>
     );

@@ -11,26 +11,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #222;
-  height: 150px;
+  background-color: rgb(27, 88, 80);
+  height: 70px;
   padding: 20px;
   color: white;
 }
 
-.search {
-  font-size: 3rem;
-}
-
-.decoMethod {
-  font-size: 3rem;
-}
-
-.selectQty {
-  font-size: 3rem;
+.search, .decoMethod, .selectQty {
+  font-size: 2.5rem;
+  color: rgb(27, 88, 80);
+  border: none;
 }
 
 .itemSelect {
   display: grid;
+  text-align: center;
   padding: 5%;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px 20px;
@@ -40,10 +35,11 @@ body {
 
 .quoteResults {
   display: grid;
+  color: rgb(27, 88, 80);
   padding: 5%;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px 20px;
   align-items: center;
   justify-content: space-between;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }

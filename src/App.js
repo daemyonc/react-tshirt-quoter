@@ -4,15 +4,13 @@ import Search from './Search'
 import { StockData } from './PricingData.js'
 import { decoPricing } from './decoPricing.js'
 
-// console.log(decoPricing["EMB"]["288"])
-
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       resultsList: [{"product":"5000","cost":"1.55"}],
       value: 'EMB',
-      selectedCost: 1.87,
+      selectedCost: 1.55,
       selectedQty: '12'
     };
     this.handleSearch = this.handleSearch.bind(this);
@@ -23,7 +21,7 @@ class App extends Component {
   };
   
   handleSearch(e) {
-    let searchRE = new RegExp(e.target.value)
+    let searchRE = new RegExp((e.target.value).toUpperCase())
     this.setState({resultsList: StockData.filter( search => search.product.match(searchRE) ) })
   }
   
@@ -33,19 +31,20 @@ class App extends Component {
 
   handleDecoMethod(e) {
     this.setState({value: e.target.value})
-    console.log("Deco method: " + e.target.value)
+    // console.log("Deco method: " + e.target.value)
   }
 
   handleQty(e) {
     this.setState({selectedQty: e.target.value});
-    console.log("Qty: " + this.state.selectedQty)
+    // console.log("Qty: " + this.state.selectedQty)
   }
 
   render() {
     let { selectedCost,selectedQty,value } = this.state
     const blankCost = parseFloat(selectedCost / .8).toFixed(2)
     const decoCost = parseFloat(blankCost + (decoPricing[value][selectedQty]).toFixed(2))
-    console.log(decoCost, decoPricing[value][selectedQty] )
+    const screenPrice = (decoCost + decoPricing[value][selectedQty]).toFixed(2)
+    // console.log(decoCost, decoPricing[value][selectedQty] )
     // console.log("Blank: " + blankCost)
     // console.log("Deco method: " + value)
     // console.log("Qty: " + selectedQty)
@@ -58,18 +57,18 @@ class App extends Component {
           </h1>
         </header>
         <p className="itemSelect">
-          <select id="selectResults" onClick={this.handleSelect} onChange={this.handleSelect} className="search" >
+          <select id="selectResults" onClick={this.handleSelect} onChange={this.handleSelect} size="3" className="search" >
             {this.state.resultsList.map((element, idx) => 
               <option key={idx+element.product} value={element.cost}>{element.product}</option>
             )}
           </select>
 
-          <select className="decoMethod" value={value} onClick={this.handleDecoMethod} onChange={this.handleDecoMethod} >
+          <select className="decoMethod" value={value} onClick={this.handleDecoMethod} onChange={this.handleDecoMethod} size="3" >
             <option value="SP">Screen Print</option>
             <option value="EMB">Embroidery</option>
           </select>
 
-          <select className="selectQty" onClick={this.handleQty} onChange={this.handleQty} >
+          <select className="selectQty" onClick={this.handleQty} onChange={this.handleQty} size="3" >
             <option value="1">1</option>
             <option value="12">12</option>
             <option value="24">24</option>
@@ -84,7 +83,7 @@ class App extends Component {
         <div className="quoteResults">
             <span className="priceResults">Our Cost: {selectedCost}</span>
             <span className="priceResults">Blank Price: {blankCost}</span>
-            <span className="priceResults">Screen Price: {decoCost}</span>           
+            <span className="priceResults">Deco Price: {screenPrice}</span>           
         </div>
       </div>
     );

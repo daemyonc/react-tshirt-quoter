@@ -1,45 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0 auto;
+  padding: 40px;
   font-size: 16px;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgb(27, 88, 80);
-  height: 70px;
+  height: 100px;
   padding: 20px;
   color: white;
-}
-
-.search, .decoMethod, .selectQty {
-  font-size: 2.5rem;
-  color: rgb(27, 88, 80);
   border: none;
 }
 
-.itemSelect {
+.search {
+  font-size: 3rem;
+}
+
+.mainContent {
   display: grid;
-  text-align: center;
-  padding: 5%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px 20px;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px 0 0 0;
   align-items: center;
-  justify-content: space-between;
+  justify-items: center;
+  background-color: rgb(107, 185, 168);
+  grid-auto-flow: dense;
+}
+
+select {
+  font-size: 2rem;
+  color: rgb(27, 88, 80);
+  border: none;
+  
+}
+
+.itemSelect, .decoMethod, .selectQty {
+  align-self: stretch;
+  
 }
 
 .quoteResults {
   display: grid;
-  color: rgb(27, 88, 80);
-  padding: 5%;
+  color: white;
+  background-color: rgb(27, 88, 80);
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px 20px;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 2.5rem;
+  grid-gap: 20px;
+  padding: 40px;
+  width: 100%;
+  grid-column: 1 / -1;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
 }

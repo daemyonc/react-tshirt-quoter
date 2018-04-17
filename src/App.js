@@ -73,7 +73,7 @@ class App extends Component {
           </select>
         </div>
         <div className="selectQty">              
-          <select onClick={this.handleQty} onChange={this.handleQty} size="3" >
+          <select onClick={this.handleQty} onChange={this.handleQty} size="3">
             <option value="1">1</option>
             <option value="12">12</option>
             <option value="24">24</option>

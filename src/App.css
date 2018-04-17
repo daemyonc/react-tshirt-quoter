@@ -1,3 +1,40 @@
+@media (max-width: 730px) {
+  .search {
+    font-size: 1.5rem;
+  }
+  select {
+    font-size: 1rem;    
+  }
+  .mainContent {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 731px) {
+  .search {
+    font-size: 2.5rem;
+  }
+  select {
+    font-size: 2rem;    
+  }
+  .mainContent {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media (min-width: 1600px) {
+  .search {
+    font-size: 4rem;
+  }
+  select {
+    font-size: 2.5rem;    
+  }
+  .mainContent {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -19,14 +56,8 @@ body {
   border: none;
 }
 
-.search {
-  font-size: 3rem;
-}
-
 .mainContent {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   grid-gap: 20px;
   padding: 20px 0 0 0;
   align-items: center;
@@ -36,15 +67,12 @@ body {
 }
 
 select {
-  font-size: 2rem;
   color: rgb(27, 88, 80);
-  border: none;
-  
+  border: none; 
 }
 
 .itemSelect, .decoMethod, .selectQty {
-  align-self: stretch;
-  
+  align-self: center;  
 }
 
 .quoteResults {

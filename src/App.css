@@ -81,7 +81,7 @@ select {
   background-color: rgb(27, 88, 80);
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-  padding: 40px;
+  padding: 20px;
   width: 100%;
   grid-column: 1 / -1;
   justify-content: center;

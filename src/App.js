@@ -31,12 +31,10 @@ class App extends Component {
 
   handleDecoMethod(e) {
     this.setState({value: e.target.value})
-    // console.log("Deco method: " + e.target.value)
   }
 
   handleQty(e) {
     this.setState({selectedQty: e.target.value});
-    // console.log("Qty: " + this.state.selectedQty)
   }
 
   render() {
@@ -44,10 +42,6 @@ class App extends Component {
     const blankCost = parseFloat(selectedCost / .8).toFixed(2)
     const decoCost = parseFloat(blankCost + (decoPricing[value][selectedQty]).toFixed(2))
     const screenPrice = (decoCost + decoPricing[value][selectedQty]).toFixed(2)
-    // console.log(decoCost, decoPricing[value][selectedQty] )
-    // console.log("Blank: " + blankCost)
-    // console.log("Deco method: " + value)
-    // console.log("Qty: " + selectedQty)
 
     return (
       <div className="App">

@@ -3,9 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "braces": "^3.0.2",
+    "clean-css": "^4.2.1",
+    "deep-extend": "^0.6.0",
+    "eslint": "^6.1.0",
+    "extend": "^3.0.2",
+    "fstream": "^1.0.12",
+    "js-yaml": "^3.13.1",
+    "macaddress": "^0.2.9",
+    "original": "^1.0.2",
+    "react": "^16.8.6",
+    "react-dev-utils": "^9.0.1",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.0.1",
+    "tar": "^4.4.10",
+    "tough-cookie": "^3.0.1",
+    "url-parse": "^1.4.7",
+    "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -14,12 +28,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "babel-jest": "^22.1.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-jest": "^24.8.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^22.1.4",
-    "react-test-renderer": "^16.2.0"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "react-test-renderer": "^16.8.6"
   }
 }

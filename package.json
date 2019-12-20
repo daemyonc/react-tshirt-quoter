@@ -15,7 +15,7 @@
     "react": "^16.8.6",
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.3.0",
     "tar": "^4.4.10",
     "tough-cookie": "^3.0.1",
     "url-parse": "^1.4.7",

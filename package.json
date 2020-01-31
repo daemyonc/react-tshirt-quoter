@@ -18,8 +18,7 @@
     "react-scripts": "^3.3.0",
     "tar": "^4.4.10",
     "tough-cookie": "^3.0.1",
-    "url-parse": "^1.4.7",
-    "webpack-dev-server": "^3.7.2"
+    "url-parse": "^1.4.7"
   },
   "scripts": {
     "start": "react-scripts start",

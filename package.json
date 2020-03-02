@@ -6,7 +6,6 @@
     "braces": "^3.0.2",
     "clean-css": "^4.2.1",
     "deep-extend": "^0.6.0",
-    "eslint": "^6.1.0",
     "extend": "^3.0.2",
     "fstream": "^1.0.12",
     "js-yaml": "^3.13.1",
@@ -34,5 +33,17 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.8.0",
     "react-test-renderer": "^16.8.6"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

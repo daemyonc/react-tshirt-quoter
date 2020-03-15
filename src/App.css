@@ -1,4 +1,4 @@
-@media (max-width: 730px) {
+/* @media (max-width: 730px) {
   .search {
     font-size: 1.5rem;
   }
@@ -33,7 +33,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-}
+} */
 
 * {
   box-sizing: border-box;

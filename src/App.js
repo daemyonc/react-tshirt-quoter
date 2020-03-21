@@ -45,40 +45,35 @@ class App extends Component {
 
     return (
       <div className="App">
-      <div className="header">
         <header>
           <Search className="search" onChange={this.handleSearch} />
         </header>
-      </div>
-
       <div className="mainContent">
-        <div className="itemSelect">
-          <select id="selectResults" onClick={this.handleSelect} onChange={this.handleSelect} size="3" className="selectResults" >
-            {this.state.resultsList.map((element, idx) => 
-              <option key={idx+element.product} value={element.cost}>{element.product}</option>
-            )}
-          </select>
-        </div>
-
-        <div className="decoMethod">
-          <select value={value} onClick={this.handleDecoMethod} onChange={this.handleDecoMethod} size="3" >
-            <option value="SP">Screen Print</option>
-            <option value="EMB">Embroidery</option>
-          </select>
-        </div>
-        <div className="selectQty">              
-          <select onClick={this.handleQty} onChange={this.handleQty} size="3">
-            <option value="1">1</option>
-            <option value="12">12</option>
-            <option value="24">24</option>
-            <option value="48">48</option>
-            <option value="72">72</option>
-            <option value="144">144</option>
-            <option value="288">288</option>
-            <option value="500">500</option>
-            <option value="1000">1,000</option>
-          </select>
-        </div>
+  
+      <select id="selectResults" onClick={this.handleSelect} onChange={this.handleSelect} className="selectResults" >
+        {this.state.resultsList.map((element, idx) => 
+          <option key={idx+element.product} value={element.cost}>{element.product}</option>
+        )}
+      </select>
+   
+      <select className="decoMethod" value={value} onClick={this.handleDecoMethod} onChange={this.handleDecoMethod} >
+        <option value="SP">Screen Print</option>
+        <option value="EMB">Embroidery</option>
+      </select>
+                    
+      <select className="selectQty" onClick={this.handleQty} onChange={this.handleQty} >
+        <option value="1" selected>Select quantity</option>
+        <option value="1">1</option>
+        <option value="12">12</option>
+        <option value="24">24</option>
+        <option value="48">48</option>
+        <option value="72">72</option>
+        <option value="144">144</option>
+        <option value="288">288</option>
+        <option value="500">500</option>
+        <option value="1000">1,000</option>
+      </select>
+      
 
         <div className="quoteResults">
             <span className="priceResults">Our Cost: ${selectedCost}</span>

@@ -3,21 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "braces": "^3.0.2",
-    "clean-css": "^4.2.1",
-    "deep-extend": "^0.6.0",
-    "extend": "^3.0.2",
-    "fstream": "^1.0.12",
-    "js-yaml": "^3.13.1",
-    "macaddress": "^0.2.9",
-    "original": "^1.0.2",
-    "react": "^16.8.6",
-    "react-dev-utils": "^9.0.1",
-    "react-dom": "^16.8.6",
-    "react-scripts": "^3.3.0",
-    "tar": "^4.4.10",
-    "tough-cookie": "^3.0.1",
-    "url-parse": "^1.4.7"
+    "react": "^16.14.0",
+    "react-dev-utils": "^11.0.4",
+    "react-dom": "^16.14.0",
+    "react-scripts": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,12 +15,10 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "babel-jest": "^24.8.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "jest": "^24.8.0",
+    "@babel/eslint-parser": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "enzyme": "^3.11.0",
     "react-test-renderer": "^16.8.6"
   },
   "browserslist": {

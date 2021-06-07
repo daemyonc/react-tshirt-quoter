@@ -4,8 +4,8 @@ class Search extends Component {
 
   render() {
     return (
-      <label>Search Products
-        <input id="search" className="search" type="search" autoFocus="true" onChange={this.props.onChange} />
+      <label>
+        <input id="search" className="search" type="search" autoFocus="true" onChange={this.props.onChange} placeholder="Search Product Ids" />
       </label>
       );
   }

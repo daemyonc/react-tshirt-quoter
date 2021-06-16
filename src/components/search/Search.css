@@ -1,0 +1,19 @@
+.search {
+    border: 8px solid var(--dk-clr);
+    border-radius: 1.2rem; 
+    background-color: var(--med-clr);
+    padding: 10px;
+    color: var(--lt-clr);
+    text-align: center;
+    /* font-size: 1.75rem; */
+    font-size: 1.25rem;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 2em;
+  }
+  ::-webkit-input-placeholder, ::placeholder {
+      color: var(--dk-clr);
+      /* font-size: 1.75rem; */
+      font-size: 1.25rem;
+      font-family: 'Ubuntu', sans-serif;
+      vertical-align: bottom;
+  }

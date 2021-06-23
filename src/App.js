@@ -60,6 +60,7 @@ class App extends Component {
                         />
                     </header>
 
+                    <div className="dropdowns">
                     <select
                         id="selectResults"
                         onClick={this.handleSelect}
@@ -104,6 +105,7 @@ class App extends Component {
                         <option value="500">500</option>
                         <option value="1000">1,000</option>
                     </select>
+                    </div>
 
                     <div className="quoteResults">
                         <div className="priceResults">
